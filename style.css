@@ -100,15 +100,17 @@ main{
 #space{
     width: 370px;
 }
-#Enter{
+#enter{
     width: 110px;
+}
+#shift{
+    width: 120px;
 }
 .key {
     width: 60px;
     height: 60px;
     font-size: 20px;
     text-align: center;
-    cursor: pointer;
     background-color: #ccc;
     border: none;
     border-radius: 8px;
@@ -118,7 +120,7 @@ main{
     display: flex;
     flex-direction: column;
 }
-.key:active {
+.key:active,.selected {
     background-color: rgba(204, 204, 204, 0.25);
     box-shadow: 0 2px #888;
     transform: translateY(2px);
