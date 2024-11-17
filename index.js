@@ -64,6 +64,12 @@ async function text_filler() {
         }
       }
     }
+    if (index % 220 === 0) {
+      output.scrollBy({
+        top: 162,
+        behavior: "smooth",
+      });
+    }
   });
 })();
 

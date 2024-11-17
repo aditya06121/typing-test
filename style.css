@@ -60,9 +60,10 @@ main{
     color: #3a42d9;
 }
 #output {
+    padding-top:5px;
     background-color: #ffffff;
     width: 1000px;
-    height: 200px;
+    height: 250px;
     font-size: 32px;
     border-radius: 18px;
     margin-bottom: 50px;
