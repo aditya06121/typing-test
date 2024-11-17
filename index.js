@@ -8,15 +8,12 @@ var index = 0;
 async function text_filler() {
   try {
     const response = await fetch("randomtext.txt");
-
     const data = await response.text();
     const lines = data.split("\n");
     let x = generateRandomNumber();
-
-    // Adjust the random number to avoid out-of-bound slicing
-    if (x + 50 > lines.length) x = lines.length - 50;
-
-    output.textContent = lines.slice(x, x + 50).join("\n");
+    console.log(x);
+    if (x + 30 > lines.length) x = lines.length - 30;
+    output.textContent = lines.slice(x, x + 50).join(" ");
     text_content = output.textContent;
   } catch (error) {
     output.textContent = `Error loading file: ${error.message}`;
@@ -50,19 +47,20 @@ async function text_filler() {
       // Decrement counters but prevent negative values
       count = Math.max(0, count - 1);
       index = Math.max(0, index - 1);
+      modifyText(index, "green");
     } else if (input.length === 1) {
-      // Append printable characters to content
       content += input;
       count += 1;
 
-      // Check for character match within bounds of output.textContent
       if (index < text_content.length) {
         if (content.charAt(count - 1) === text_content.charAt(index)) {
-          console.log(true, content); // Log match
+          console.log(true, content, index);
           index += 1;
+          modifyText(index, "green");
         } else {
-          console.log(false, content); // Log mismatch
+          console.log(false, content);
           index += 1;
+          modifyText(index, "red");
         }
       }
     }
@@ -71,5 +69,14 @@ async function text_filler() {
 
 // Function to generate random number
 function generateRandomNumber() {
-  return Math.floor(Math.random() * 697) + 1;
+  return Math.floor(Math.random() * 67) + 1;
 }
+const modifyText = function (index, type) {
+  const content = output.textContent;
+  const modifiedContent =
+    content.slice(0, index - 1) +
+    `<span class="${type}">${content.charAt(index - 1)}</span>` +
+    `<span class="grey">${content.charAt(index)}</span>` +
+    content.slice(index + 1);
+  output.innerHTML = modifiedContent;
+};
