@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #53535b;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 main{
     margin-top: 8vh;
@@ -60,12 +60,14 @@ main{
     color: #3a42d9;
 }
 #output {
+    background-color: #ffffff;
     width: 1000px;
     height: 200px;
     font-size: 32px;
     border-radius: 18px;
     margin-bottom: 50px;
-    /*caret-color: transparent;*/
+    overflow: auto;
+    padding-left: 15px;
 }
 #output:focus{
     outline: none;
@@ -126,5 +128,7 @@ main{
     position: fixed;
     bottom: 0;
 }
-
+.red{
+    background: #ff0000;
+}
 
