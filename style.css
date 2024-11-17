@@ -6,10 +6,9 @@
 }
 body {
     font-family: Arial, sans-serif;
-    height: 100vh;
     margin: 0;
     background-color: #53535b;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 main{
     margin-top: 8vh;
@@ -18,7 +17,6 @@ main{
     align-items: center;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
     overflow: hidden;
 }
 /* Navbar */
@@ -47,32 +45,31 @@ main{
     text-decoration: none;
     color: #fff;
 }
-
 .navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 1.5rem;
 }
-
 .navbar .nav-links a {
     text-decoration: none;
     color: #fff;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
-
 .navbar .nav-links a:hover {
     color: #3a42d9;
 }
-
 #output {
     width: 1000px;
     height: 200px;
-    text-align: center;
-    font-size: 18px;
+    font-size: 32px;
     border-radius: 18px;
     margin-bottom: 50px;
-
+    /*caret-color: transparent;*/
+}
+#output:focus{
+    outline: none;
+    boundry:none;
 }
 .keyboard {
     display: flex;
@@ -90,12 +87,11 @@ main{
     gap: 10px;
     justify-content: center;
     margin-top: 10px;
-    position: relative;
 }
 
 
 #backspace{
-    width: 150px;
+    width: 190px;
 }
 #space{
     width: 370px;
@@ -104,7 +100,7 @@ main{
     width: 110px;
 }
 #shift{
-    width: 120px;
+    width: 150px;
 }
 .key {
     width: 60px;
@@ -116,16 +112,11 @@ main{
     border-radius: 8px;
     box-shadow: 0 8px #aaa;
 }
-.dot,.comma{
-    display: flex;
-    flex-direction: column;
-}
 .key:active,.selected {
     background-color: rgba(204, 204, 204, 0.25);
     box-shadow: 0 2px #888;
     transform: translateY(2px);
 }
-/* Footer */
 .footer {
     width: 100%;
     background: #333;
