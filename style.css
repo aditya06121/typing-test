@@ -1,0 +1,137 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    background-color: #53535b;
+    line-height: 1.6;
+}
+main{
+    margin-top: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
+    overflow: hidden;
+}
+/* Navbar */
+.navbar {
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #3a42d9;
+}
+
+#output {
+    width: 1000px;
+    height: 200px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 18px;
+    margin-bottom: 50px;
+
+}
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.row-1 {
+    display: flex;
+    gap: 10px;
+}
+.row-2,.row-3,.row-4 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+
+#backspace{
+    width: 150px;
+}
+#space{
+    width: 370px;
+}
+#Enter{
+    width: 110px;
+}
+.key {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ccc;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px #aaa;
+}
+.dot,.comma{
+    display: flex;
+    flex-direction: column;
+}
+.key:active {
+    background-color: rgba(204, 204, 204, 0.25);
+    box-shadow: 0 2px #888;
+    transform: translateY(2px);
+}
+/* Footer */
+.footer {
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 1rem 1rem;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+}
+
+

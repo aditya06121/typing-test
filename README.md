@@ -24,7 +24,7 @@ This repository contains a simple **Typing Test** application built entirely usi
 ## How to Use
 1. Clone or download this repository to your local machine.
    ```bash
-   git clone https://github.com/your-username/typing-test.git
+   git clone https://github.com/aditya06121/typing-test.git
    ```
 2. Open the `index.html` file in your preferred web browser.
 3. Start typing the displayed sentence in the input box. Your speed and accuracy will be calculated in real-time.
