@@ -37,20 +37,20 @@ This repository contains a simple **Typing Test** application built entirely usi
 Typing-Test/
 ├── index.html       # Main HTML file
 ├── style.css        # CSS file for styling
-└── script.js        # JavaScript file for functionality
+└── index.js        # JavaScript file for functionality
 ```
 
 ---
 
 ## Screenshots
-![Typing Test Screenshot](screenshot.png)
+
+![Typing Test Screenshot](./assets/screenshot.png)
 > *Screenshot of the Typing Test interface*
 
 ---
 
 ## Future Enhancements
 - Add a **leaderboard** to save and compare scores.
-- Include a **dark mode** for better user accessibility.
 - Provide multiple test modes (e.g., timed tests, difficulty levels).
 - Expand sentence library for more variety.
 

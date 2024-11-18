@@ -194,7 +194,7 @@ main{
     margin-top: 40px;
     font-style: italic;
 }
-.overlay-content button {
+.overlay-content button,#closeOverlayBtn{
     margin-top: 20px;
     padding: 12px 25px;
     background: linear-gradient(45deg, #007bff, #0056b3);
@@ -208,30 +208,16 @@ main{
     transition: transform 0.2s ease, background 0.3s ease;
 }
 
-.overlay-content button:hover {
+.overlay-content button:hover,#closeOverlayBtn:hover {
     background: linear-gradient(45deg, #0056b3, #003f7f);
     transform: scale(1.05);
 }
 
-.overlay-content button:active {
+.overlay-content button:active,#closeOverlayBtn:active {
     transform: scale(0.95);
 }
-
-#closeOverlayBtn {
-    padding: 8px 16px;
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#closeOverlayBtn:hover {
-    background-color: #d32f2f;
-}
-
 .overlay.show {
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.5s ease, visibility 0s; /* Show immediately */
+    transition: opacity 0.5s ease, visibility 0s;
 }
