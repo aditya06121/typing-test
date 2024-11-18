@@ -135,14 +135,15 @@ main{
     border-radius: 8px;
 }
 .green {
-    padding: 2px;
+    /*padding: 2px;*/
     border-radius: 8px;
     background: #00ff00;
 
 }
 .grey{
+    text-decoration: underline;
     background: #ccc;
-    padding: 10px;
+    /*padding: 10px;*/
     border-radius: 8px;
 }
 
@@ -220,4 +221,24 @@ main{
     opacity: 1;
     visibility: visible;
     transition: opacity 0.5s ease, visibility 0s;
+}
+.styled-select {
+    width: 120px;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    cursor: pointer;
+}
+.styled-select:hover {
+    background-color: #f1f1f1;
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }

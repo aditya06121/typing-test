@@ -5,7 +5,6 @@ var text_content;
 var index = 0;
 var words2, words1;
 var wpm;
-var num = 0;
 // Function to fetch and display text
 async function text_filler() {
   try {
@@ -90,6 +89,7 @@ const modifyText = function (index, type) {
 //event listener
 const overlay = document.getElementById("overlay");
 const closeOverlayBtn = document.getElementById("closeOverlayBtn");
+const inpt_time = document.getElementById("time-limit");
 
 window.addEventListener("load", () => {
   setTimeout(() => {
@@ -99,7 +99,9 @@ window.addEventListener("load", () => {
 
 // Close the overlay when the close button inside the overlay is clicked
 closeOverlayBtn.addEventListener("click", () => {
-  overlay.classList.remove("show"); // Remove class to hide the overlay
+  overlay.classList.remove("show");
+  let time = inpt_time.value;
+  setInterval(triggerEvent, time);
 });
 
 //results logic
@@ -125,40 +127,39 @@ const comparison = () => {
   const sameWordCount = commonWords.length;
   const diffWordCount = differentWords.length;
   wpm = sameWordCount;
-
-  return {
-    correctWords: wordCount1, // Word count in the first string
-    typedWords: wordCount2, // Word count in the second string
-    sameWordCount: sameWordCount, // Number of same words
-    diffWordCount: diffWordCount, // Number of different words
-    wpm: wpm,
-  };
+  if (index === 0) {
+    return {
+      correctWords: 0, // Word count in the first string
+      typedWords: 0, // Word count in the second string
+      sameWordCount: 0, // Number of same words
+      diffWordCount: 0, // Number of different words
+      wpm: 0,
+    };
+  } else {
+    return {
+      correctWords: wordCount1, // Word count in the first string
+      typedWords: wordCount2, // Word count in the second string
+      sameWordCount: sameWordCount, // Number of same words
+      diffWordCount: diffWordCount, // Number of different words
+      wpm: wpm,
+    };
+  }
 };
 
 // Event handler function
 function triggerEvent() {
   const overlay = document.getElementById("overlay");
 
-  if (!overlay.classList.contains("show")) {
-    finder(index);
-    const x = comparison();
-    const results = document.querySelector(".overlay-content");
+  finder(index);
+  const x = comparison();
+  const results = document.querySelector(".overlay-content");
 
-    results.innerHTML = `<p>Results</p>
+  results.innerHTML = `<p>Results</p>
           <p>Number of words typed: ${x.typedWords}</p>
           <p>Number of correct words typed: ${x.sameWordCount}</p>
           <p style="font-size: 20px; font-weight: bold; color: #003579;">WPM: ${x.wpm}</p>
           <p>Thanks for going over my hobby project</p>
-          <button id="closeOverlayBtn">Retake the test!</button>
+          <button onclick="location.reload()">Retake the test!</button>
     `;
-    console.log(x);
-
-    const closeOverlayBtn = document.getElementById("closeOverlayBtn");
-    closeOverlayBtn.addEventListener("click", () => {
-      overlay.classList.remove("show");
-    });
-
-    overlay.classList.add("show");
-  }
+  overlay.classList.add("show");
 }
-setInterval(triggerEvent, 60000);
