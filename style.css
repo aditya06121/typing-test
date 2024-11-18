@@ -145,4 +145,69 @@ main{
     padding: 10px;
     border-radius: 8px;
 }
+.popup_display{
+    background-color: #f9f9f9;
+    color: #333333;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 45%;
+    z-index: 2000;
+    border-radius: 25px;
+    border: #333333 solid 4px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+}
+.popup_display p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+}
+.popup_display p:first-of-type {
+    font-size: 32px;
+    font-weight: bold;
+    color: #003579;
+    margin-bottom: 15px;
+}
+.popup_display p:last-of-type {
+    font-size: 14px;
+    color: #666666;
+    margin-top: 40px;
+    font-style: italic;
+}
+.popup_display button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #007bff, #0056b3); /* Gradient for visual appeal */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Rounded button */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+    transition: transform 0.2s ease, background 0.3s ease;
+}
 
+.popup_display button:hover {
+    background: linear-gradient(45deg, #0056b3, #003f7f); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.popup_display button:active {
+    transform: scale(0.95); /* Pressed effect */
+}
