@@ -64,7 +64,7 @@ async function text_filler() {
         }
       }
     }
-    if (index % 220 === 0) {
+    if (index % 220 === 219) {
       output.scrollBy({
         top: 162,
         behavior: "smooth",
@@ -86,3 +86,22 @@ const modifyText = function (index, type) {
     content.slice(index + 1);
   output.innerHTML = modifiedContent;
 };
+
+//pop up
+//reload pop up
+
+//event listener
+const showOverlayBtn = document.getElementById("showOverlayBtn");
+const overlay = document.getElementById("overlay");
+const closeOverlayBtn = document.getElementById("closeOverlayBtn");
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    overlay.classList.add("show"); // Add class to show the overlay
+  }, 500); // 2000ms (2 seconds) delay
+});
+
+// Close the overlay when the close button inside the overlay is clicked
+closeOverlayBtn.addEventListener("click", () => {
+  overlay.classList.remove("show"); // Remove class to hide the overlay
+});

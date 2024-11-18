@@ -22,15 +22,15 @@
         </ul>
     </div>
 </nav>
-<div class="overlay">
-<div class="popup_display">
-    <p>Welcome to the Typing Tester!</p>
-    <p>We calculate your average typing speed in under 2 Minutes!!</p>
-    <p>click the button to start</p>
-    <button>Start!</button>
-    <p>Note: This page is specifically designed for the desktop, the page might not render properly on mobile devices</p>
-</div>
-<div class="popup_result"></div>
+<div class="overlay hidden" id="overlay">
+    <div class="overlay-content">
+        <p>Welcome to the Typing Tester!</p>
+        <p>We calculate your average typing speed in under 2 Minutes!!</p>
+        <p>click the button to start</p>
+        <button id="closeOverlayBtn">Start!</button>
+        <p>Note: This page is specifically designed for the desktop, the page might not render properly on mobile devices</p>
+    </div>
+    <div class="results"></div>
 </div>
 
 <main>
