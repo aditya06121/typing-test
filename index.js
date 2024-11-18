@@ -95,6 +95,15 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     overlay.classList.add("show"); // Add class to show the overlay
   }, 500);
+  //display for mobiles
+  const x = window.outerWidth;
+  console.log(x);
+  if (x < 900) {
+    const display = document.querySelector("body");
+    display.outerHTML = `
+  <body style="background-color: black;color:white; hight:100% width:100%;position: fixed"><div style="font-size: 50px;padding:20px">Im sorry but this website is specially designed for desktop</div></body>
+  `;
+  }
 });
 
 // Close the overlay when the close button inside the overlay is clicked
@@ -126,7 +135,7 @@ const comparison = () => {
   // Number of same and different words
   const sameWordCount = commonWords.length;
   const diffWordCount = differentWords.length;
-  wpm = sameWordCount;
+  wpm = sameWordCount * (60000 / inpt_time.value);
   if (index === 0) {
     return {
       correctWords: 0, // Word count in the first string
