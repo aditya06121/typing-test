@@ -1,10 +1,14 @@
-var output = document.querySelector("#output");
-var count = 0;
-var content = "";
-var text_content;
-var index = 0;
-var words2, words1;
-var wpm;
+
+//global variable declarations
+let output = document.querySelector("#output");
+let count = 0;
+let content = "";
+let text_content;
+let index = 0;
+let words2, words1;
+let wpm;
+
+
 // Function to fetch and display text
 async function text_filler() {
   try {
