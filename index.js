@@ -109,7 +109,7 @@ window.addEventListener("load", () => {
   }, 500);
   //display for mobiles
   const x = window.outerWidth;
-  console.log(x);
+  // console.log(x);
   if (x < 900) {
     const display = document.querySelector("body");
     display.outerHTML = `
@@ -129,6 +129,7 @@ const finder = (index) => {
   let x = text_content.slice(0, index);
   words1 = x.trim().toLowerCase().split(/\s+/);
   words2 = content.trim().toLowerCase().split(/\s+/);
+  // console.log(words2);
 };
 const comparison = () => {
   const wordCount1 = words1.length;
