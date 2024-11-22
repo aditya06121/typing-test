@@ -3,7 +3,8 @@ let count = 0;
 let content = "";
 let text_content;
 let index = 0;
-let modifiedContent = "";
+let states = [];
+
 // Function to fetch and display text
 async function text_filler() {
   try {
@@ -14,6 +15,7 @@ async function text_filler() {
     if (x + 30 > lines.length) x = lines.length - 30;
     output.textContent = lines.slice(x, x + 50).join(" ");
     text_content = output.textContent;
+    states = new Array(text_content.length).fill("pending");
   } catch (error) {
     output.textContent = `Error loading file: ${error.message}`;
   }
@@ -45,19 +47,20 @@ async function text_filler() {
       // Decrement counters but prevent negative values
       count = Math.max(0, count - 1);
       index = Math.max(0, index - 1);
-      modifyText(index, "green");
+      states[index] = "pending";
+      modifyText();
     } else if (input.length === 1) {
       content += input;
       count += 1;
 
       if (index < text_content.length) {
         if (content.charAt(count - 1) === text_content.charAt(index)) {
-          index += 1;
-          modifyText(index, "green");
+          states[index] = "correct";
         } else {
-          index += 1;
-          modifyText(index, "red");
+          states[index] = "incorrect";
         }
+        index += 1;
+        modifyText();
       }
     }
     if (index % 220 === 219) {
@@ -73,14 +76,19 @@ async function text_filler() {
 function generateRandomNumber() {
   return Math.floor(Math.random() * 67) + 1;
 }
-const modifyText = function (index, type) {
-  const content = output.textContent;
-  modifiedContent =
-    content.slice(0, index - 1) +
-    `<span class="${type}">${content.charAt(index - 1)}</span>` +
-    `<span class="grey">${content.charAt(index)}</span>` +
-    content.slice(index + 1);
-  console.log(modifiedContent);
+
+const modifyText = ()=> {
+  let modifiedContent = "";
+  for (let i = 0; i < text_content.length; i++) {
+    if (states[i] === "correct") {
+      modifiedContent += `<span class="green">${text_content.charAt(i)}</span>`;
+    } else if (states[i] === "incorrect") {
+      modifiedContent += `<span class="red">${text_content.charAt(i)}</span>`;
+    } else if (states[i] === "next") {
+      modifiedContent += `<span class="next">${text_content.charAt(i)}</span>`;
+    } else {
+      modifiedContent += `<span class="grey">${text_content.charAt(i)}</span>`;
+    }
+  }
   output.innerHTML = modifiedContent;
 };
-

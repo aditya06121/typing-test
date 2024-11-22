@@ -132,19 +132,20 @@ main{
 .red{
     background: #ff0000;
     padding: 2px;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
 }
 .green {
     /*padding: 2px;*/
-    border-radius: 8px;
+    /*border-radius: 3px;*/
     background: #00ff00;
 
 }
 .grey{
-    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.3);
+    /*background: #ccc;*/
+}
+.next{
     background: #ccc;
-    /*padding: 10px;*/
-    border-radius: 8px;
 }
 
 .overlay {
