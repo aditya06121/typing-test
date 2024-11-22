@@ -47,7 +47,8 @@ async function text_filler() {
       // Decrement counters but prevent negative values
       count = Math.max(0, count - 1);
       index = Math.max(0, index - 1);
-      states[index] = "pending";
+      states[index] = "next";
+      states[index+ 1] = "pending";
       modifyText();
     } else if (input.length === 1) {
       content += input;
@@ -60,6 +61,7 @@ async function text_filler() {
           states[index] = "incorrect";
         }
         index += 1;
+        states[index] = "next";
         modifyText();
       }
     }
