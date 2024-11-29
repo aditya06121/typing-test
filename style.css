@@ -131,7 +131,7 @@ main{
 }
 .red{
     background: #ff0000;
-    padding: 2px;
+    /*padding: 2px;*/
     /*border-radius: 8px;*/
 }
 .green {
